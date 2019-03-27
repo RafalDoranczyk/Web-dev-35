@@ -1,0 +1,106 @@
+.serviceBanner{
+height: 55vh;
+@include flex-column-nowrap;
+align-items: center;
+justify-content: space-evenly;
+  @media #{$landscape-mobile}{
+    height: 80vh;
+    width: 95%;
+    margin: 0 auto;
+    @include flex-row-nowrap;
+  }
+  @media #{$landscape-big}{
+    height: 50vh;
+    width: 80%;
+  }
+
+&__speech{
+  height: 80px;
+  width: 80px;
+  border: 1px dotted $green;
+  @include flex-center;
+  @media #{$landscape-mobile}{
+    height: 150px;
+    width: 150px;
+  }
+}
+
+&__icon{
+  height: 80%;
+  width: 80%;
+  @media #{$landscape-mobile}{
+    height: 50%;
+    width: 50%;
+  }
+}
+
+&__opinionBox{
+  width: 70%;
+  @media #{$landscape-mobile}{
+    margin-top: 30px;
+   width: 45%;
+   height: 200px;
+   }
+}
+
+&__description{
+  @include headingDescription;
+  text-align: justify;
+}
+
+&__signature{
+  display: block;
+  margin-top: 20px;
+  font-family: $headingSubtitle-f;
+  text-align: center;
+  position: relative;
+  font-size: 1.7rem;
+  color: $black;
+  @media #{$landscape-mobile}{
+    text-align: left;
+    padding-left: 30px;
+  }
+  &::after{
+   top: 50%;
+   left: 20%;
+   transform: translate(0,-50%);
+   width: 20px;
+   height: 2px;
+   background-color: $red;
+   @media #{$landscape-mobile}{
+     left: 0;
+   }
+  }
+
+}
+
+
+//OWL CAROUSEL BUTTONS
+.owl-nav button{
+  position: absolute;
+  top: 35%;
+  width: 40px;
+  background:none;
+  transform: translateY(-50%);
+    & span{
+    display: block;
+    font-size: 10vh;
+    color: $red;
+    @media #{$landscape-mobile}{
+      font-size: 20vh;
+    }
+    }
+  }
+  .owl-prev{
+    position: absolute;
+    left: -20%;
+
+  }
+  .owl-next{
+    right: -20%;
+  }
+
+
+
+
+}

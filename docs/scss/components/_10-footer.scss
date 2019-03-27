@@ -1,0 +1,10 @@
+.footer{
+  margin-top: 20px;
+  height: 6vh;
+  @include flex-column-nowrap;
+  align-items: center;
+  justify-content: space-around;
+  font-family: $headingTitle-f;
+  background: #333;
+  color: $white;
+}

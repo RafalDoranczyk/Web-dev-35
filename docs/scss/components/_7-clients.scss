@@ -1,0 +1,98 @@
+.clients{
+  margin-top: 40px;
+  padding: 15px;
+  background:linear-gradient(to top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%),
+   url('../images/mobile/clients-background-small.png');
+  background-size: cover;
+  background-position: bottom ,left;
+
+
+
+//BOX FOR ALL CLIENTS
+  &__box{
+    margin-top: 20px;
+    height: 120vh;
+    @include flex-column-nowrap;
+    align-items: center;
+    justify-content: space-around;
+  @media #{$landscape-mobile}{
+    @include flex-row-wrap;
+    margin: 0 auto;
+    width: 90%;
+  }
+  @media #{$landscape-big}{
+    height: 60vh;
+    width: 70%;
+  }
+  @media #{$landscape-large}{
+    width: 50%;
+  }
+  }
+
+//BOX FOR ONE CLIENT IMAGE + OPINION
+  &__item{
+    flex-basis: 24%;
+    width: 90%;
+    @include flex-row-nowrap;
+    justify-content: space-between;
+    @media #{$landscape-mobile}{
+     flex-basis: 50%;
+    }
+  }
+
+
+  &__image{
+    align-self: flex-start;
+    border-radius: 50%;
+    margin: 0 auto;
+    width: 25%;
+    max-width: 70px;
+    
+  }
+
+  //BOX FOR ONE CLIENT OPINION + NAME + PROFFESION
+  &__opinionBox{
+    flex-basis: 60%;
+    align-self: stretch;
+    @media #{$landscape-big}{
+      flex-basis: 70%;
+    }
+  }
+
+  &__name{
+    @include headingTitle;
+    font-size: 1.3rem;
+  }
+
+  &__proffesion{
+    display: block;
+    @include headingDescription;
+    font-size: 1.2rem;
+    font-style: italic;
+    text-transform: capitalize;
+    text-align: start;
+    position: relative;
+      &::after{
+        top: 150%;
+        left: 0;
+        height: 2px;
+        width: 25%;
+        background-color: $red;
+      }
+      @media #{$landscape-mobile}{
+        text-align: left;
+      }
+
+  }
+
+  &__description{
+    margin-top: 20px;
+    @include headingDescription;
+    font-size: 1.2rem;
+    text-align: left;
+   @media #{$landscape-big}{
+     width: 70%;
+   }
+  }
+
+}

@@ -1,0 +1,66 @@
+.section-heading{
+  $root: &;
+  height: 20vh;
+  @include flex-column-nowrap;
+  align-items: center;
+  justify-content: center;
+  @media #{$landscape-mobile}{
+    height: 35vh;
+  }
+  @media #{$landscape-big}{
+    height: 20vh;
+  }
+    &__title{
+      @include headingTitle;
+      position: relative;
+      flex-basis: 70%;
+      &:after{
+        top: 70%;
+        left: 50%;
+        width: 40px;
+        height: 2px;
+        transform: translateX(-50%);
+        background-color: $red;
+    }
+    }
+    &__subtitle{
+      flex-basis: 30%;
+      @include headingSubtitle;
+    }
+   
+    
+  &--extended{
+    height: 45vh;
+    @media #{$landscape-mobile}{
+      height: 60vh;
+    }
+    @media #{$landscape-big}{
+      height: 30vh;
+    }
+      &__title{
+        flex-basis: 20%;
+        background-color: red;
+        &:after{
+          top: 65%;
+        }
+      }
+      &__subtitle{
+        flex-basis: 20%;
+        display: flex;
+        align-items: center;
+      }
+       //DESCRIPTION IS ONLY IN EXTENDED VERSION
+       #{$root}__description{
+        @include headingDescription;
+        flex-basis: 50%;
+        width: 85%;
+          @media #{$landscape-big}{
+            width: 65%;
+          }
+      
+  }
+  } 
+
+
+}
+  

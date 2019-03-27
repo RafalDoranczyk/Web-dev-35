@@ -1,0 +1,129 @@
+.service{
+  margin: 60px auto 0 auto;
+  @include flex-row-wrap;
+  justify-content: space-around;
+  width: 95%;
+  @media #{$landscape-mobile}{
+    width: 95%;
+  }
+  @media #{$landscape-big}{
+    width: 100%;
+    margin: 80px auto 0 auto;
+  }
+
+  & .skillsBox{
+    margin-top: 40px;
+    min-height: 120px;
+    @include flex-column-nowrap;
+    justify-content: space-between;
+    @media #{$landscape-mobile}{
+      flex-basis: 50%;
+      order: 1;
+     min-height: 40vh;
+    }
+    @media #{$landscape-big}{
+      height: 40vh;
+    }
+  
+    &__item{
+      width: 100%;
+      margin: 10px auto 0 auto;
+      @include flex-column-nowrap;
+
+      @media #{$landscape-big}{
+        width: 45%;
+        margin: 0;
+      }
+    }
+
+    &__button{
+      flex-basis: 45px;
+      @include flex-row-nowrap;
+      justify-content: space-between;
+      background-color: $white;
+      border: 1px solid $lightGray;
+      cursor: pointer;
+      
+    }
+
+    &__image{
+      height: 2rem;
+      width: 2rem;
+      margin-left: 5px;
+      @media #{$landscape-big}{
+        height: 3rem;
+        width: 3rem;
+      }
+    }
+
+    &__title{
+      @include headingTitle;
+      font-size: 1.2rem;
+      @media #{$landscape-big}{
+        flex-basis: 75%;
+        @include flex-row-nowrap;
+        font-size: 1.3rem;
+      }
+    }
+
+    &__arrow{
+      margin-right: 5px;
+      transition: .1s;
+      &--active{
+        transform: rotate(180deg);
+      }
+    }
+
+    &__description{
+      @include headingDescription;
+      flex-basis: 0;
+      max-height: 140px;
+      opacity: 0;
+      margin: 0 auto;
+      overflow-y: scroll;
+      transition: .5s;
+      line-height: 180%;
+      padding-left: 5px;
+      text-align: left;
+      
+      &::-webkit-scrollbar{
+        color: $green;
+        width: 3px;
+        background-color: $white;
+        &-thumb {
+          background-color: $green;
+          outline: 1px solid $green;
+        }
+      }
+      &--active{
+        flex-basis: 200px;
+        opacity: 1;
+        border: 1px solid $lightGray;
+      }
+    }
+  }
+ 
+  &__imageBox{
+    margin-top: 50px;
+    @media #{$landscape-mobile}{
+      height: 45vh;
+      flex-basis: 45%;
+      @include flex-row-nowrap;
+      justify-content: flex-end;
+    }
+   
+  }
+
+  &__image{
+    display: none;
+    @media #{$landscape-mobile}{
+      display: block;
+      height: 100%;
+    }
+  
+  }
+
+
+ 
+
+}

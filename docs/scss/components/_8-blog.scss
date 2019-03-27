@@ -1,0 +1,160 @@
+.blog{
+height: auto;
+margin-top: 40px;
+
+
+& .box{
+  @include flex-column-nowrap;
+  height: 150vh;
+  align-items: center;
+  // background-color: red;
+  justify-content: space-between;
+  @media #{$landscape-mobile}{
+    @include flex-row-nowrap;
+    justify-content: space-around;
+    height: 90vh;
+    }
+  @media #{$landscape-big}{
+    width: 85%;
+    height: 50vh;
+    margin: 0 auto;
+  }
+  @media #{$landscape-large}{
+    width: 65%;
+  }
+
+    & > :nth-child(1) > :nth-child(1){
+    background: url('../images/blog-1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:  center;
+    @media #{$landscape-mobile}{
+      background-position: right ;
+    }
+    @media #{$landscape-big}{
+      background-position: initial;
+      background-size: contain;
+    }
+    }
+    & > :nth-child(2) > :nth-child(1){
+      background: url('../images/blog-2.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:  center;
+        @media #{$landscape-big}{
+          background-size: contain;
+          background-position: initial;
+        }
+  }
+  & > :nth-child(3) > :nth-child(1){
+    background: url('../images/blog-3.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position:  center;
+      @media #{$landscape-big}{
+        background-size: contain;
+        background-position: initial;
+      }
+}
+
+ 
+//BOX FOR ONE ITEM => IMAGE + CONTENT
+  &__item{
+    max-width: 350px;
+    flex-basis: 31%;
+    width: 80%;
+    @include flex-column-nowrap;
+    justify-content: space-around;
+    @media #{$landscape-mobile}{
+      height: 100%;
+      flex-basis: 28%;
+    }
+    @media #{$landscape-big}{
+      justify-content: space-evenly;
+      flex-basis: 31%;
+    }
+  }
+
+
+
+  &__image{
+    position: relative;
+    flex-basis: 50%;
+    max-width: 350px;
+}
+
+&__dateBox{
+    position: absolute; 
+    top: 60%;
+    left: -3%;
+    height: 10vh;
+    width: 10vh;
+    background-color: $green;
+    @include flex-column-nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    color: $white;
+    font-family: $description-f;
+    @media #{$landscape-mobile}{
+      top: 65%;
+      height: 13vh;
+      width: 13vh;
+    }
+    @media #{$landscape-big}{
+      height: 8vh;
+      left: -5%;
+      width: 8vh;
+    }
+}
+
+  &__day{
+    flex-basis: 40%;
+    font-size: 2.4rem;
+    font-weight: 700;
+    @media #{$landscape-mobile}{
+      font-size: 1.5rem;
+    }
+  }
+
+  &__month{
+    flex-basis: 40%;
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-style: italic;
+  }
+
+
+
+&__title{
+  @include headingTitle;
+  font-size: 1.1rem;
+}
+
+&__description{
+  @include headingDescription;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+&__socials{
+  @include flex-row-nowrap;
+}
+&__social{
+  @include flex-center;
+  &:nth-of-type(2){
+    margin-left: 20px;
+  }
+}
+&__number{
+  font-family: $description-f;
+  font-weight: 400;
+  font-style: italic;
+  color: $green;
+  margin-left: 5px;
+  font-size: 1.1rem;
+}
+
+
+}
+
+}

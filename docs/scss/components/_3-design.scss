@@ -1,0 +1,69 @@
+.design{
+  margin-top: 20px;
+  position: relative;
+  height: 85vh;
+  padding: 25px;
+
+  @media #{$landscape-mobile}{
+    height: 110vh;
+  }
+  @media #{$landscape-big}{
+    height: 90vh;
+  }
+
+  &::after{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/mobile/design-background-small.png');
+    background-size: cover;
+    opacity: .25;
+    z-index: -1;
+    background-repeat: no-repeat;
+    @media #{$landscape-big}{
+      background: url('../images/desktop/design-background-big.png');
+      background-position: 70%;
+    
+    }
+}
+
+
+  &__example{
+    position: absolute;
+    transform: translateX(-50%);
+    
+    &--big{
+      bottom: -1%;
+      left: 50%;
+      width: 75%;
+      max-width: 400px;
+      @media #{$landscape-mobile}{
+        width: 30%;
+      }
+    }
+
+    &--small{
+      bottom: -10%;
+      left: calc(50% + 100px);
+      width: 100px;
+      @media #{$landscape-mobile}{
+        width:15%;
+      }
+      @media #{$landscape-big}{
+        width: 180px;
+        left: calc(70vw - 150px);
+      }
+    }
+  }
+
+
+  &__image{
+    width: 100%;
+  }
+
+ 
+
+}
+
+

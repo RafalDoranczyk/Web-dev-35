@@ -1,0 +1,117 @@
+
+.about{
+  margin-top: 20px;
+  height: auto;
+  @media #{$landscape-mobile}{
+    margin-top: 40px;
+  }
+  @media #{$landscape-big}{
+    margin-top: 60px;
+  }
+
+
+  & .gallery{
+    height: 120vh;
+    @include flex-column-nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: -1;
+
+      @media #{$landscape-mobile}{
+        @include flex-row-nowrap;
+        height: 60vh;
+        
+      }
+      @media #{$landscape-big}{
+        height: 40vh;
+        width: 65%;
+        margin: 0 auto;
+      }
+   
+
+    &__item{
+    width: 75%;
+    max-width: 280px;
+    @include flex-center;
+    position: relative;
+    transform: translate(0,0);
+    box-shadow: none;
+    transition: $itemTransition;
+    cursor: pointer;
+    @media #{$landscape-mobile}{
+     flex-basis: 30%;
+    }
+    &:hover{
+      transform: translate(-5px,-5px);
+      box-shadow: 5px 5px 0 0 $green;
+      &::after{
+        opacity: 1;
+      }
+      .gallery__icon,
+      .gallery__motto{
+        opacity: 1;
+      }
+    }
+    //HIDDEN ACTIVE
+    &::after{
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: $gradient;
+      transition: $itemTransition;
+      opacity: 0;
+    }
+    //SHOWED ACTIVE ONLY IN PORTRAIT
+    @media #{$portrait}{
+      &--active{
+        transform: translate(-5px,-5px);
+        box-shadow: 5px 5px 0 0 $green;
+        &::after{
+        opacity: 1;
+        }
+        .gallery__icon,
+        .gallery__motto{
+          opacity: 1;
+        }
+      }
+    }
+   
+    }
+
+    &__image{
+     width: 100%;
+    }
+
+    &__icon, &__motto{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 10%;
+      @include flex-center;
+      color: $white;
+      opacity: 0;
+      z-index: 1;
+      transition: $itemTransition;
+    }
+
+    &__icon{
+      top: 37%;
+      font-size: 2rem;
+    }
+
+    &__motto{
+      top: 50%;
+      text-transform: uppercase;
+      font-family: $headingTitle-f;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+  }
+
+
+
+
+}

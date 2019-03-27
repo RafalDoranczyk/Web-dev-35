@@ -1,0 +1,87 @@
+.features{
+  margin-top: 40px;
+  @media #{$landscape-big}{
+    margin: 60px;
+  }
+   
+
+
+
+  & .box{
+    height: 140vh;
+    @include flex-column-nowrap;
+    @media #{$landscape-mobile}{
+      @include flex-column-wrap;
+      height: 100vh;
+      width: 95%;
+      margin: 20px auto 0 auto;
+    }
+    @media #{$landscape-big}{
+      @include flex-column-wrap;
+      height: 40vh;
+      width: 75%;
+    }
+
+  &__item{
+    flex-grow: 1;
+    @include flex-column-wrap;
+    justify-content: flex-start;
+    transform: translateX(-100%);
+    transition: .5s;
+    @media #{$landscape-mobile}{
+      transform: translateX(0);
+      flex-basis: 33%;
+      width: 50%;
+    }
+    @media #{$landscape-big}{
+     flex-basis: 50%;
+     width: 33%;
+    }
+      &--active{
+        transform: translateX(0);
+      }
+
+     
+  }
+
+  &__iconBox{
+    flex-basis: 100%;
+    width: 15%;
+    @include flex-row-wrap;
+    justify-content: flex-end;
+  }
+
+  &__icon{
+    align-self: flex-start;
+    transform: translateY(50%);
+    @media #{$landscape-big}{
+      font-size: 5rem;
+      transform: translateY(20%);
+    }
+  }
+
+  &__title{
+    flex-basis: 25%;
+    width: 75%;
+    @include headingTitle;
+    font-size: 1.5rem;
+    @media #{$landscape-big}{
+      font-size: 1.3rem;
+      flex-basis: 20%;
+      margin-left: 10px;
+    }
+  }
+
+  &__description{
+    @include headingDescription;
+    flex-basis: 50%;
+    width: 75%;
+    font-size: 1.4rem;
+    text-align: left;
+    @media #{$landscape-big}{
+      width: 80%;
+      margin-left: 10px;
+    }
+  }
+}
+}

@@ -1,0 +1,31 @@
+
+//GRIDS MIXINS
+
+@mixin flex-row-wrap{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+@mixin flex-row-nowrap{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+@mixin flex-column-nowrap{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+@mixin flex-column-wrap{
+  display: flex;
+  flex-flow: column wrap;
+}
+
+@mixin flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

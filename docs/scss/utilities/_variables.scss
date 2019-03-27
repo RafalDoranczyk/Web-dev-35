@@ -1,0 +1,32 @@
+
+//FONTS
+@font-face {
+  font-family: 'Kaushan Script-Regular';
+  src: url('../fonts/KaushanScript-Regular.otf');
+}
+
+$headingSubtitle-f: 'Kaushan Script-Regular';
+$headingTitle-f: 'Montserrat' ,'sans-serif';
+$description-f: 'Roboto', sans-serif;
+
+
+//COLORS
+$gradient: linear-gradient(to top, rgba(213, 192, 116, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%);
+$white: #fff;
+$lightGray: #e5e5e5;
+$black : rgba(51, 51, 51, 255);
+$gray: rgba(153, 153, 153, 255);
+$green: #95e1d3;
+$red: #f38181;
+$yellow: #fce38a;
+$pink: #f38181;
+$footer-c: #f8f8f8;
+
+//TRANSITIONS
+$itemTransition: .8s;
+
+//QUERIES
+$portrait: "only screen and (orientation: portrait)";
+$landscape-mobile: "only screen and (orientation: landscape)";
+$landscape-big: "only screen and (orientation:landscape) and (min-width:800px)";
+$landscape-large: "only screen and (orientation:landscape) and (min-width: 1200px)";

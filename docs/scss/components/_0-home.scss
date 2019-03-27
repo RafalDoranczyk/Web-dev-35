@@ -1,0 +1,353 @@
+@keyframes titleMove {
+  0%{
+    opacity: 1;
+    transform: translatex(0);
+  }
+  50%{
+    opacity: 1;
+    transform: translateX(0)
+  }
+   60%{
+     opacity: 0;
+     transform: translateX(100%);
+   }
+   80%{
+   opacity: 0;
+   transform: translateX(-200%);
+   }
+   90%{
+     opacity: 1;
+     transform: translateX(0);
+ }
+}
+
+.home{
+  @include flex-column-nowrap;
+  height: 100vh;
+  justify-content: space-between;
+  background-size: cover;
+  background-position: center, top center;
+  background-image: $gradient, url('../images/mobile/header-background-small.png');
+  position: relative;
+  overflow: hidden;
+  @media #{$landscape-mobile}{
+    background-position: left, center;
+  }
+  @media #{$landscape-big}{
+    background-position: 30% 70%;
+    background-image: $gradient, url('../images/desktop/header-background-big.png');
+  }
+
+  & .logo{
+    @include logo;
+    @include flex-center;
+  
+      @media #{$landscape-mobile}{
+        flex-basis: 20%;
+      }
+  }
+  
+  
+  & .nav{
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 10vh;
+      @include flex-row-wrap;
+      justify-content: space-around;
+      z-index: 2;
+      padding: 0;
+      transition: .4s;
+      background-color: transparent;
+    
+      @media #{$landscape-mobile}{
+        @include flex-row-nowrap;
+        justify-content: space-around;
+      }
+      @media #{$landscape-big}{
+        height: 8vh;
+      }
+  
+      //WHEN USER SCROLLS MORE THAN NAV HEIGHT
+      &--active{
+        background-color: $pink;
+        padding-left: 3vw;
+      }
+     
+      //BURGER ICON MENU SHOWED ONLY IN PORTRAIT 
+      &__burger{
+        display: block;
+        flex-basis: 12%;
+        max-width: 40px;
+        height:  60%;
+        border: none;
+        font-size: 3rem;
+        position: relative;
+        transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        background-color: transparent;
+  
+        @media #{$landscape-mobile}{
+            display: none;
+        }
+  
+        &--span{
+          position: absolute;
+          display: block;
+          height: 15%;
+          width: 100%;
+          background-color: $yellow;
+          border-radius: 10px;
+          opacity: 1;
+          left: 0;
+          transform: rotate(0deg);
+          transition: .25s ease-in-out;
+            //WHEN CLOSED
+            &:nth-child(1){
+                top: 0;
+            }
+            &:nth-child(2){
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            &:nth-child(3){
+                top: 100%;
+                transform: translateY(-100%);
+            }
+              //WHEN OPENED
+            &--active{
+              &:nth-child(1){
+                top: 50%;
+                transform: rotate(135deg);
+              }
+              &:nth-child(2){
+                opacity: 0;
+                left: -40px;
+              }
+              &:nth-child(3){
+                top: 50%;
+                transform: rotate(-135deg);
+              }
+            }
+        }
+      } 
+  
+      &__list{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 60vh;
+        @include flex-column-nowrap;
+        justify-content: space-around;
+        opacity: 0;
+        transition: .3s;
+        transform: translateY(-100%);
+        z-index: -1;
+        background-color: $pink;
+        font-size: 1.7rem;
+     
+  
+        @media #{$landscape-mobile}{
+          opacity: 1;
+          @include flex-row-nowrap;
+          height: 100%;
+          flex-basis: 70%;
+          position: initial;
+          transform: translateY(0);
+          background-color: transparent;
+        }
+  
+        @media #{$landscape-big}{
+          flex-basis: 40%;
+        }
+  
+        //ACTIVE FOR MOBILE
+        &--active{
+          transform: translateY(0);
+          opacity: 1;
+          transition: .2s;
+        }
+      }
+  
+      &__item{
+        height: 100%;
+        text-transform: uppercase;
+        text-align: center;
+        @include flex-center;
+        position: relative;
+        border-top: 1px solid $pink;
+  
+        @media #{$landscape-mobile}{
+          border: none;
+          flex-basis: 10%;
+        }
+      
+      }
+  
+      &__link{
+       
+        display: block;
+        color: $white;
+        padding: 10px;
+        font-family: $headingTitle-f;
+        cursor: pointer;
+        &--icon{
+          background-color: transparent;
+          border: none;
+        }
+          &:hover{
+            border-bottom: 2px solid $yellow;
+            color: $yellow;
+          }
+       
+  
+          @media #{$landscape-mobile}{
+          font-size: 1rem;
+          }
+  
+          @media #{$landscape-big}{
+            font-size: 1.1rem;
+          }
+      }
+    
+      &__icon{
+        @include flex-center;
+        height: 100%;
+        width: 100%;
+        
+      }
+  
+     
+  
+    
+  }
+  
+  & .header{
+      flex-basis: 55%;
+      @include flex-column-nowrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20vh;
+      position: relative;
+      @media #{$landscape-mobile}{
+        flex-basis: 65%;
+        margin-top: 15vh;
+      }
+      &::after{
+        top: 80%;
+        left: 50%;
+        width: 20%;
+        max-width: 50px;
+        height: 2px;
+        transform: translateX(-50%);
+        background-color: $white;
+        @media #{$landscape-mobile}{
+          top: 70%;
+        }
+      }
+     
+   
+      &__title{
+        flex-basis: 60%;
+        order: 1;
+        @include headingTitle;
+        font-size: 4.5rem;
+        animation: titleMove infinite 3s ease-in-out 1s;
+        color: $white;
+        text-align: center;
+        text-transform: uppercase;
+  
+          @media #{$landscape-mobile}{
+          font-size: 3.5rem;
+          }
+  
+          @media #{$landscape-big}{
+            font-size: 8rem;
+          }
+      }
+    
+  
+      &__title--second{
+        display: block;
+      }
+  
+      &__subtitle{
+        @include headingSubtitle;
+        font-size: 3rem;
+        color: $white;
+  
+          @media #{$landscape-mobile}{
+            font-size: 2.5rem;
+          }
+  
+          @media #{$landscape-big}{
+            font-size: 4rem
+          }
+      }
+  
+      &__button{
+        @include button;
+        order: 2;
+        &:hover{
+          background-color: $white;
+          color: $red;
+          border-color: $red;
+        }
+      }
+  }
+  
+  & .stripes{
+      flex-basis: 10%;
+      @include flex-row-nowrap;
+      justify-content: space-around;
+      text-transform: uppercase;
+      @media #{$landscape-big}{
+        width: 60%;
+        margin: 0 auto;
+      }
+  
+      &__item{
+        @include flex-row-nowrap;
+        margin-left: 15px;
+        flex-basis: 25%;
+        height: 80%;
+        list-style-type: none;
+        position: relative;
+        font-family: $headingTitle-f;
+        &::after{
+          top: -5%;
+          left: 0;
+          width: 90%;
+          height: 2px;
+          background-color: $white;
+          transition: 1.1s;
+        }
+          //Gives color for current active headerTitle
+        &--active{
+          &::after{
+            background-color: $red;
+          }
+        }
+      }
+  
+      &__name{
+        color: $white;
+        font-size: 1rem;
+        text-decoration: none;
+        @media #{$landscape-big}{
+          font-size: 1.4rem;
+        }
+      }
+  
+      &__number{
+        font-weight: 700;
+      }
+  }
+}
+
+
+
+
