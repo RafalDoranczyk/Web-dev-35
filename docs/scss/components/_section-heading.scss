@@ -10,6 +10,9 @@
   @media #{$landscape-big}{
     height: 20vh;
   }
+  @media #{$iPad}{
+  height: 25vh;   
+  }
     &__title{
       @include headingTitle;
       position: relative;
@@ -37,6 +40,9 @@
     @media #{$landscape-big}{
       height: 30vh;
     }
+    @media #{$iPad}{
+      height: 40vh;
+    }
       &__title{
         flex-basis: 20%;
         background-color: red;
@@ -57,6 +63,7 @@
           @media #{$landscape-big}{
             width: 65%;
           }
+          
       
   }
   } 

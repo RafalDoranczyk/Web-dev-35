@@ -13,6 +13,10 @@
   @media #{$landscape-mobile}{
     padding: 10px 8px;
   }
+  @media #{$iPad}{
+    font-size: 2rem;
+    padding: 12px 20px;
+  }
  
 }  
 
@@ -26,9 +30,15 @@
   @media #{$landscape-big}{
     font-size: 2.4rem;
   }
+  @media #{$iPad}{
+    font-size: 5rem;
+  }
     &>*{
-      color: $white
+      color: $white;
     }
+   
+    
+    
  
 }
 
@@ -39,6 +49,9 @@
   font-weight: 700;
   text-transform: uppercase;
   font-size: 2.8rem;
+  @media #{$iPad}{
+    font-size: 5rem;
+  }
 }
 
 @mixin headingSubtitle{
@@ -46,6 +59,9 @@
   font-family: $headingSubtitle-f;
   color: $black;
   font-size: 2rem;
+  @media #{$iPad}{
+    font-size: 4.5rem;
+  }
   &:first-letter{
     text-transform: uppercase;
   }
@@ -57,7 +73,9 @@
   line-height: 150%;
   font-size: 1.5rem;
    text-align: center;
-  
+   @media #{$iPad}{
+    font-size: 2.8rem;
+  }
 }
 
 

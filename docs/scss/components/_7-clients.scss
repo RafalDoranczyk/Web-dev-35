@@ -5,13 +5,14 @@
    url('../images/mobile/clients-background-small.png');
   background-size: cover;
   background-position: bottom ,left;
+  background-attachment: fixed;
 
 
 
 //BOX FOR ALL CLIENTS
   &__box{
     margin-top: 20px;
-    height: 120vh;
+    height: 140vh;
     @include flex-column-nowrap;
     align-items: center;
     justify-content: space-around;

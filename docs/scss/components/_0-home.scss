@@ -79,7 +79,7 @@
       &__burger{
         display: block;
         flex-basis: 12%;
-        max-width: 40px;
+        max-width: 70px;
         height:  60%;
         border: none;
         font-size: 3rem;
@@ -202,14 +202,16 @@
             border-bottom: 2px solid $yellow;
             color: $yellow;
           }
-       
-  
+
           @media #{$landscape-mobile}{
           font-size: 1rem;
           }
   
           @media #{$landscape-big}{
             font-size: 1.1rem;
+          }
+          @media #{$iPad}{
+            font-size: 3rem;
           }
       }
     
@@ -219,6 +221,7 @@
         width: 100%;
         
       }
+     
   
      
   
@@ -267,6 +270,9 @@
           @media #{$landscape-big}{
             font-size: 8rem;
           }
+          @media #{$iPad}{
+            font-size: 8rem;
+          }
       }
     
   
@@ -285,6 +291,9 @@
   
           @media #{$landscape-big}{
             font-size: 4rem
+          }
+          @media #{$iPad}{
+            font-size: 6rem;
           }
       }
   
@@ -339,6 +348,9 @@
         text-decoration: none;
         @media #{$landscape-big}{
           font-size: 1.4rem;
+        }
+        @media #{$iPad}{
+          font-size: 2rem;
         }
       }
   

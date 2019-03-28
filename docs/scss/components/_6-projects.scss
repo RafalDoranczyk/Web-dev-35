@@ -5,16 +5,14 @@
 & .gallery{
   @include flex-row-wrap;
   justify-content: center;
+  margin-top: 20px;
   @media #{$landscape-mobile}{
-    margin-top: 20px;
     @include flex-column-wrap;
     justify-content: flex-start;
     height: 70vh;
     background-color: red;
   }
 &__item{
-    flex-basis: 100%;
-    margin: 40px 0 0 0;
     position: relative;
     transition: $itemTransition;
     cursor: pointer;

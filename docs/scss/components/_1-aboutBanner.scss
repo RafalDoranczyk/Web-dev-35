@@ -40,13 +40,17 @@
   font-weight: 700;
   transition: .5s;
   transform: scale(1) translate(0,0);
+    @media #{$landscape-big}{
+      font-size: 4rem;
+    }
+    @media #{$iPad}{
+      font-size: 6rem;
+    }
   &--active{
     transform: scale(1.2) translate(-2px,-2px);
     color: $yellow;
   }
-  @media #{$landscape-big}{
-    font-size: 4rem;
-  }
+  
 }
 
  &__caption{
@@ -54,6 +58,9 @@
   text-align: center;
     @media #{$landscape-big}{
       font-size: 1.1rem;
+    }
+    @media #{$iPad}{
+      font-size: 2rem;
     }
  }
 

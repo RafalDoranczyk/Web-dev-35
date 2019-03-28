@@ -27,6 +27,9 @@
         width: 65%;
         margin: 0 auto;
       }
+      @media #{$iPad}{
+     height: 100vh;
+      }
    
 
     &__item{
@@ -38,9 +41,13 @@
     box-shadow: none;
     transition: $itemTransition;
     cursor: pointer;
-    @media #{$landscape-mobile}{
-     flex-basis: 30%;
-    }
+      @media #{$landscape-mobile}{
+      flex-basis: 30%;
+      }
+      @media #{$iPad}{
+        max-width: 450px;
+      }
+     
     &:hover{
       transform: translate(-5px,-5px);
       box-shadow: 5px 5px 0 0 $green;
@@ -63,7 +70,7 @@
       opacity: 0;
     }
     //SHOWED ACTIVE ONLY IN PORTRAIT
-    @media #{$portrait}{
+  
       &--active{
         transform: translate(-5px,-5px);
         box-shadow: 5px 5px 0 0 $green;
@@ -74,7 +81,6 @@
         .gallery__motto{
           opacity: 1;
         }
-      }
     }
    
     }
@@ -99,6 +105,13 @@
     &__icon{
       top: 37%;
       font-size: 2rem;
+      @media #{$landscape-mobile}{
+        top: 35%;
+      }
+      @media #{$iPad}{
+        top: 30%;
+        font-size: 6.5rem;
+      }
     }
 
     &__motto{
@@ -107,6 +120,13 @@
       font-family: $headingTitle-f;
       font-weight: 700;
       font-size: 1.2rem;
+      @media #{$landscape-mobile}{
+        top: 55%;
+      }
+      @media #{$iPad}{
+        font-size: 3.5rem;
+        top: 53%;
+      }
     }
 
   }

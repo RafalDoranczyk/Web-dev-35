@@ -21,6 +21,11 @@
       height: 40vh;
       width: 75%;
     }
+    @media #{$iPad}{
+      // height: 100vh;
+      background-color: red;
+    }
+    
 
   &__item{
     flex-grow: 1;
@@ -28,6 +33,9 @@
     justify-content: flex-start;
     transform: translateX(-100%);
     transition: .5s;
+    @media #{$no-animation}{
+      transform: translateX(0);
+    }
     @media #{$landscape-mobile}{
       transform: translateX(0);
       flex-basis: 33%;
@@ -37,6 +45,7 @@
      flex-basis: 50%;
      width: 33%;
     }
+   
       &--active{
         transform: translateX(0);
       }
@@ -54,10 +63,16 @@
   &__icon{
     align-self: flex-start;
     transform: translateY(50%);
-    @media #{$landscape-big}{
-      font-size: 5rem;
-      transform: translateY(20%);
-    }
+      @media #{$landscape-big}{
+        font-size: 5rem;
+        transform: translateY(20%);
+      }
+      @media #{$iPad}{
+       height: 7.5vh;
+       width: 7.5vh;
+      }
+  
+    
   }
 
   &__title{
@@ -65,11 +80,15 @@
     width: 75%;
     @include headingTitle;
     font-size: 1.5rem;
-    @media #{$landscape-big}{
-      font-size: 1.3rem;
-      flex-basis: 20%;
-      margin-left: 10px;
-    }
+      @media #{$landscape-big}{
+        font-size: 1.3rem;
+        flex-basis: 20%;
+        margin-left: 10px;
+      }
+      @media #{$iPad}{
+        flex-basis: 35%;    
+      }
+  
   }
 
   &__description{

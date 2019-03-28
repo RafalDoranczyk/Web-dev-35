@@ -26,7 +26,9 @@ $footer-c: #f8f8f8;
 $itemTransition: .8s;
 
 //QUERIES
+$no-animation: "only screen and (orientation: landscape) and (max-height: 800px)";
 $portrait: "only screen and (orientation: portrait)";
 $landscape-mobile: "only screen and (orientation: landscape)";
 $landscape-big: "only screen and (orientation:landscape) and (min-width:800px)";
 $landscape-large: "only screen and (orientation:landscape) and (min-width: 1200px)";
+$iPad: "only screen and (min-width: 768px) and (min-height: 1024px)";

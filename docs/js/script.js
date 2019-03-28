@@ -176,7 +176,7 @@ document.addEventListener('scroll', () => {
 
   //MEDIA QUERIES
   const mobile = () => {
-    if (screen.width < 800 && screen.height > screen.width) return true;
+    if (screen.height > screen.width && screen.height < 800) return true;
     return false;
   }
 
